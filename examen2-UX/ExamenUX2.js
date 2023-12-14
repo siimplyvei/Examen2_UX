@@ -187,29 +187,6 @@ app.get('/listPosts', async (req, res) => {
     }
   });
 
-  /*app.delete('/deletePost/:postID',async (req,res)=>{
-    try {
-      const client = new MongoClient(uri);
-      const database = client.db("Examen2UX");
-      const Posts = database.collection("Posts");
-      const postID = req.params.postID;
-      const filter = { _id: ObjectId(postID) };
-      const result = await Posts.deleteOne(query);
-  
-      if (result.deletedCount === 1) {
-        console.log("Successfully deleted one document.");
-        res.status(200).send("Se borro algo exitosamente");
-      } else {
-        console.log("No documents matched the query. Deleted 0 documents.");
-        res.status(200).send("Ningun documento hizo match con la busqueda, no se elimino nada");
-      }
-    }catch(error){
-      res.status(500).send("Algo salio mal, no pudimos borrar el documento");
-    } finally {
-      await client.close();
-    }   
-} );*/
-
 app.delete('/deletePost/:postID', async (req, res) => {
   try {
     const client = new MongoClient(uri);
